@@ -1,59 +1,77 @@
-/*  your css code here. If applicable */
-
-.sec{
+/* General container styling */
+.sec {
     background-color: #F6F7FB;
-	width: 800px;
-	height: 300px;
-	display: flex;
-	flex-flow: column;
-	justify-content: center;
-	align-items: center;
-
+    width: 800px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
-.top{
+/* Progress bar container */
+.top {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Circle styles */
 .circle {
-	background-color: white;
-	width: 35px;
-	height: 35px;
-	border: 3px solid #E0E0E0;
-	border-radius: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center; 
+    background-color: white;
+    width: 35px;
+    height: 35px;
+    border: 3px solid #E0E0E0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #E0E0E0;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
+.circle.active {
+    border: 3px solid #3498DB;
+    color: #3498DB;
+}
+
+/* Line styles */
 .line {
-	width: 50px;
-	border: 3px solid #E0E0E0;
+    width: 50px;
+    border: 3px solid #E0E0E0;
+    transition: all 0.3s ease;
 }
 
-.active {
-	border: 3px solid #3498DB;
+.line.active {
+    border-color: #3498DB;
 }
 
-#prev {
-	background-color: #3498DB;
-	color: white;
-	width: 100px;
-	padding: 13px;
-	margin: 8px;
-	border: none;
-	border-radius: 7px;
-	font-size : 16px;
+/* Button styles */
+#prev, #next {
+    background-color: #3498DB;
+    color: white;
+    width: 100px;
+    padding: 13px;
+    margin: 8px;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
-#next {
-	background-color: #3498DB;
-	color: white;
-	width: 100px;
-	padding: 13px;
-	margin: 8px;
-	border: none;
-	border-radius: 7px;
-	font-size : 16px;
+
+#prev:hover, #next:hover {
+    background-color: #297ABF;
+    transform: scale(1.05);
+}
+
+#prev:disabled, #next:disabled {
+    background-color: #E0E0E0;
+    color: white;
+    cursor: not-allowed;
+    transform: none;
 }
